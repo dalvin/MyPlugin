@@ -1,0 +1,1 @@
+/Users/m710450/Documents/mine/MyPlugin/buildSrc/build/classes/kotlin/main/com/dalvinlabs/FirstPlugin.class:/Users/m710450/Documents/mine/MyPlugin/buildSrc/build/classes/kotlin/main/com/dalvinlabs/FirstTask.class
