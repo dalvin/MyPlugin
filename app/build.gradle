@@ -25,6 +25,10 @@ android {
     }
 }
 
+hello {
+    message = "Custom message from app gradle"
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -35,4 +39,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+
+    implementation("com.macys.mobileapp.xapi.browse:mobileappbrowse-xapi-proto-files:1.0.72") {
+        exclude group: "com.google.protobuf"
+    }
 }

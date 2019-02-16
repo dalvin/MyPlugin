@@ -37,3 +37,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+data class BagMigrationItem(
+    val quantity: CharSequence?,
+    val sequenceNumber: Long,
+    val id: String,
+    val isPickupFromStore: Boolean = false
+) {
+    constructor(
+        quantity: CharSequence?,
+        sequenceNumber: Long,
+        id: String
+    ) : this(quantity, sequenceNumber, id, false)
+}
