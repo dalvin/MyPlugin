@@ -1,5 +1,7 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.3.21'
+    id 'java-gradle-plugin' // Simplify creating gradle plugin
+    id 'com.gradle.plugin-publish' version '0.10.0' // To publish plugin on gradle portal
+    id 'org.jetbrains.kotlin.jvm' version '1.3.21' // For writing plugin code in Kotlin
 }
 
 repositories {
@@ -22,3 +24,26 @@ compileTestKotlin {
     }
 }
 
+/**
+ * Configure plugin properties
+ */
+gradlePlugin {
+    plugins {
+        codeReviewPlugin {
+            id = 'com.dalvinlabs.CodeReviewPlugin' // Id to be used by consumer projects to apply plugin
+            version = '0.1'
+            displayName = 'Code Review'
+            description = 'This plugin reviews a specify project, It is not a generic plugin'
+            implementationClass = 'com.dalvinlabs.CodeReviewPlugin'
+        }
+    }
+}
+
+/**
+ * Configure publish
+ */
+pluginBundle {
+    website = 'https://www.dalvinlabs.com'
+    vcsUrl = 'https://www.dalvinlabs.com'
+    tags = ['Android']
+}
