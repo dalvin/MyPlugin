@@ -36,6 +36,8 @@ dependencies {
     implementation("com.macys.mobileapp.xapi.browse:mobileappbrowse-xapi-proto-files:1.0.72") {
         exclude group: "com.google.protobuf"
     }
+
+    implementation project(':nestedlib')
 }
 
 apply plugin: 'com.dalvinlabs.CodeReviewPlugin'

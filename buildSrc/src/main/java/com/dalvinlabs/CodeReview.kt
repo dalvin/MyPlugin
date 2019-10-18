@@ -15,8 +15,6 @@ import org.gradle.api.tasks.TaskAction
 class CodeReviewPlugin : Plugin<Project> {
 
     override fun apply(project: Project) {
-        println("CodeReviewPlugin, apply()")
-
         project.tasks.create(
             "CodeReview", // Task name
             CodeReviewTask::class.java // Task type
@@ -27,21 +25,21 @@ class CodeReviewPlugin : Plugin<Project> {
 }
 
 private fun reviewBuildFiles(project: Project) {
-    if (!project.name.contains("-data")) return
-
     val dependencies = project.configurations.getByName("implementation").dependencies
 
-    dependencies.forEach {
-        if (it.name.contains("-data")) {
-            throw GradleException("A data module ${project.name} must not depend upon another data module ${it.name}")
+    if (project.name == "A") {
+        dependencies.forEach {
+            if (it.name == "C") {
+                throw GradleException("Module ${project.name} must not depend upon module ${it.name}")
+            }
         }
     }
+
+    println("Module ${project.name} passed code review")
 }
 
 open class CodeReviewTask : DefaultTask() {
 
     @TaskAction
-    fun action() {
-        println("CodeReviewTask, action()")
-    }
+    fun action() {}
 }

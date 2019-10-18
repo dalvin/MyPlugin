@@ -1,2 +1,5 @@
-include ':app'
+include ':app', ':A', ':B', ':C'
 //includeBuild 'nested/buildSrc'
+
+include ':nestedlib'
+project(':nestedlib').projectDir = new File('SubDir/nestedlib')

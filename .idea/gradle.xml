@@ -8,6 +8,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/A" />
+            <option value="$PROJECT_DIR$/B" />
+            <option value="$PROJECT_DIR$/C" />
+            <option value="$PROJECT_DIR$/SubDir/nestedlib" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
           </set>

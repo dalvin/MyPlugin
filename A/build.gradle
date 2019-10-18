@@ -1,0 +1,16 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(":B")
+
+    /*
+        Enabling following dependency will result in failed code review task.
+     */
+    //implementation project(":C")
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+apply plugin: 'com.dalvinlabs.CodeReviewPlugin'

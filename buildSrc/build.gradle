@@ -24,6 +24,11 @@ compileTestKotlin {
     }
 }
 
+// ___________________ GRADLE PORTAL PUBLISHING
+
+// To publish plugin in gradle portal execute following from buildSrc directory.
+// ./gradlew publishPlugin
+
 /**
  * Configure plugin properties
  */
@@ -47,3 +52,5 @@ pluginBundle {
     vcsUrl = 'https://www.dalvinlabs.com'
     tags = ['Android']
 }
+
+// ___________________ GRADLE PORTAL PUBLISHING
